@@ -27,7 +27,9 @@ class Message:
         return f"[{self.role}] {self.content}"
     
     def __repr__(self) -> str:
-        return f"Message(role='{self.role}', content='{self.content[:20]}...', timestamp={self.timestamp})"
+        content_preview = self.content[:20] if len(self.content) > 20 else self.content
+        suffix = "..." if len(self.content) > 20 else ""
+        return f"Message(role='{self.role}', content='{content_preview}{suffix}', timestamp={self.timestamp})"
     
     def to_dict(self) -> dict:
         """转换为字典格式"""

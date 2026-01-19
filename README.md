@@ -34,6 +34,14 @@ agent-myself/
 pip install -r requirements.txt
 ```
 
+**可选：安装包到本地环境**
+
+如果你想在其他地方导入 agent_core 模块，可以进行开发模式安装：
+
+```bash
+pip install -e .
+```
+
 ### 2. 运行基础示例
 
 ```bash

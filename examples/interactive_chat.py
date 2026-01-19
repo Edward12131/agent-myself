@@ -7,6 +7,8 @@ import sys
 import os
 
 # 添加父目录到路径以便导入agent_core模块
+# 注意: 这是为了在未安装包的情况下运行示例
+# 在生产环境中，建议使用 'pip install -e .' 安装包后直接导入
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from agent_core import Agent
