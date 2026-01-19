@@ -20,7 +20,8 @@ agent-myself/
 │   └── message.py      # 消息类
 ├── examples/           # 使用示例
 │   ├── basic_usage.py  # 基础使用示例
-│   └── interactive_chat.py  # 交互式对话
+│   ├── interactive_chat.py  # 交互式对话
+│   └── custom_agents.py  # 自定义智能体示例
 ├── requirements.txt    # 依赖包列表
 └── README.md          # 项目文档
 ```
@@ -43,6 +44,12 @@ python examples/basic_usage.py
 
 ```bash
 python examples/interactive_chat.py
+```
+
+### 4. 查看自定义智能体示例
+
+```bash
+python examples/custom_agents.py
 ```
 
 ## 核心功能 (Core Features)
@@ -112,6 +119,30 @@ for msg in agent.get_history():
 - `quit` 或 `exit`: 退出对话
 - `clear`: 清除对话历史
 - `history`: 查看对话历史
+
+### 自定义智能体
+
+通过继承 `Agent` 类，你可以创建具有自定义行为的智能体：
+
+```python
+from agent_core import Agent
+
+class MyAgent(Agent):
+    """自定义智能体"""
+    
+    def _generate_response(self, user_input: str) -> str:
+        # 实现你的自定义逻辑
+        return f"自定义响应: {user_input}"
+
+# 使用自定义智能体
+agent = MyAgent(name="我的智能体")
+response = agent.process("测试")
+```
+
+运行 `examples/custom_agents.py` 查看更多自定义智能体示例，包括：
+- 回声智能体 (EchoAgent)
+- 计数智能体 (CounterAgent)
+- 礼貌智能体 (PoliteAgent)
 
 ## 扩展方向 (Future Extensions)
 
