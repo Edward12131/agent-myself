@@ -1,0 +1,2 @@
+# 基本依赖 (Basic dependencies)
+python-dotenv>=1.0.0
